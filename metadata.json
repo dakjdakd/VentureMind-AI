@@ -1,0 +1,6 @@
+{
+  "name": "VentureMind AI",
+  "description": "A high-fidelity multi-agent venture analysis SaaS platform UI that evaluates startup ideas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_OPENAI_COMPATIBLE_API"]
+}
