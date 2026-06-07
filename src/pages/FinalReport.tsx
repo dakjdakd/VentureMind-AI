@@ -93,6 +93,7 @@ export function FinalReport() {
   const [loading, setLoading] = useState(true);
   const report = job?.finalReport;
   const scores = report?.scores || fallbackScores;
+  const scoreEntries = Object.entries(scores) as Array<[string, number]>;
   const keyReasons = report?.keyReasons || [];
   const consensus = report?.agentConsensus || [];
   const memoSections = useMemo(() => splitMarkdown(report?.markdown), [report?.markdown]);
@@ -179,7 +180,7 @@ export function FinalReport() {
               <BarChart3 className="size-4" /> Score Reconciliation
             </div>
             <div className="space-y-4">
-              {Object.entries(scores).map(([label, score]) => (
+              {scoreEntries.map(([label, score]) => (
                 <div key={label}>
                   <div className="flex justify-between text-xs mb-1.5">
                     <span className="capitalize text-zinc-200">{label}</span>
